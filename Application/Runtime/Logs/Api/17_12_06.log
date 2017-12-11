@@ -1,0 +1,105 @@
+[ 2017-12-06T11:11:02+08:00 ] 120.24.54.6 /jyggapi/index.php/pay/paylog_wap?gid=1&orderid=104207&paymoney=100.00&time=1512529862&uid=5021&username=fore&sign=01c9834058f20cec836a8a68e03cce3a&ip=183.14.172.56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001182s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '5021' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '104207' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('5021','fore','1','104207','100','3','DAEBFA25CA7C8C6B65322A065AB1D7FD','2','183.14.172.56','1512529862','1512134240','121.35.129.230') [ RunTime:0.0003s ]
+
+[ 2017-12-06T11:11:29+08:00 ] 120.24.54.6 /jyggapi/index.php/pay/paylog_wap?gid=1&orderid=104210&paymoney=98.00&time=1512529889&uid=5021&username=fore&sign=2d7b46c24df56595c2a77cad9a216df2&ip=183.14.172.56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001300s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '5021' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '104210' LIMIT 1   [ RunTime:0.0043s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('5021','fore','1','104210','98','3','DAEBFA25CA7C8C6B65322A065AB1D7FD','2','183.14.172.56','1512529889','1512134240','121.35.129.230') [ RunTime:0.0005s ]
+
+[ 2017-12-06T11:12:04+08:00 ] 120.24.54.6 /jyggapi/index.php/pay/paylog_wap?gid=1&orderid=104211&paymoney=199.00&time=1512529924&uid=5021&username=fore&sign=831be3e5833016d024f858dade75d126&ip=183.14.172.56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001388s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '5021' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '104211' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('5021','fore','1','104211','199','3','DAEBFA25CA7C8C6B65322A065AB1D7FD','2','183.14.172.56','1512529924','1512134240','121.35.129.230') [ RunTime:0.0004s ]
+
+[ 2017-12-06T11:12:37+08:00 ] 120.24.54.6 /jyggapi/index.php/pay/paylog_wap?gid=1&orderid=104213&paymoney=199.00&time=1512529957&uid=5021&username=fore&sign=2219f42ff8ca029e3f3e3a51feb4255a&ip=183.14.172.56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '5021' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '104213' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('5021','fore','1','104213','199','3','DAEBFA25CA7C8C6B65322A065AB1D7FD','2','183.14.172.56','1512529957','1512134240','121.35.129.230') [ RunTime:0.0004s ]
+
+[ 2017-12-06T11:13:11+08:00 ] 120.24.54.6 /jyggapi/index.php/pay/paylog_wap?gid=1&orderid=104215&paymoney=198.00&time=1512529991&uid=5021&username=fore&sign=c726ff4fce0a9e7dbe1c7f81a3679051&ip=183.14.172.56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001189s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001266s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '5021' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '104215' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('5021','fore','1','104215','198','3','DAEBFA25CA7C8C6B65322A065AB1D7FD','2','183.14.172.56','1512529991','1512134240','121.35.129.230') [ RunTime:0.0004s ]
+
+[ 2017-12-06T11:13:56+08:00 ] 120.24.54.6 /jyggapi/index.php/pay/paylog_wap?gid=1&orderid=104216&paymoney=498.00&time=1512530036&uid=5021&username=fore&sign=51730da0e717d9a9b256bcbd8a6b2ceb&ip=183.14.172.56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001412s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '5021' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '104216' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('5021','fore','1','104216','498','3','DAEBFA25CA7C8C6B65322A065AB1D7FD','2','183.14.172.56','1512530036','1512134240','121.35.129.230') [ RunTime:0.0061s ]
+
+[ 2017-12-06T11:14:20+08:00 ] 120.24.54.6 /jyggapi/index.php/pay/paylog_wap?gid=1&orderid=104218&paymoney=98.00&time=1512530060&uid=5021&username=fore&sign=88e9d3247103abcf0dce1ac0ff8b8e56&ip=183.14.172.56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '5021' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '104218' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('5021','fore','1','104218','98','3','DAEBFA25CA7C8C6B65322A065AB1D7FD','2','183.14.172.56','1512530060','1512134240','121.35.129.230') [ RunTime:0.0004s ]
+

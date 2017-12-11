@@ -1,0 +1,61 @@
+[ 2017-11-23T10:46:23+08:00 ] 183.14.132.155 /jyggapi/index.php/user/install/?sign=6ada1281da42daac17e1d62d8bb85489&androidid=910a8995103c678b&os=android&time=1511405182741&imei=864895021770928&device=CA3DD91E8DFB4CBD7133E6D32854A9E3&gid=1&mac=1C%3A1B%3A0D%3AE2%3A65%3A44&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'CA3DD91E8DFB4CBD7133E6D32854A9E3' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `mygame_install` (`gid`,`device_id`,`channel`,`os`,`channel_name`,`total_channel`,`ip`,`install_time`) VALUES ('1','CA3DD91E8DFB4CBD7133E6D32854A9E3','3','android','test1cps','2','183.14.132.155','1511405183') [ RunTime:0.0002s ]
+
+[ 2017-11-23T10:46:33+08:00 ] 183.14.132.155 /jyggapi/index.php/user/register/?sign=295daadd45810d85a24f8d615292c663&uid=627&os=android&time=1511405193202&username=testusername&device=CA3DD91E8DFB4CBD7133E6D32854A9E3&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '627' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-23T10:46:36+08:00 ] 183.14.132.155 /jyggapi/index.php/user/login/?sign=16b4272ada7c4c326e5b29e84d477c2c&uid=627&os=android&time=1511405196788&username=testusername&device=CA3DD91E8DFB4CBD7133E6D32854A9E3&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0009s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('627','testusername','1','CA3DD91E8DFB4CBD7133E6D32854A9E3','3','1511405196','183.14.132.155') [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-11-23T10:46:38+08:00 ] 183.14.132.155 /jyggapi/index.php/pay/paylog/?sign=a271ecfa061ebbf95fbc91cca10334ca&uid=627&time=1511405198073&username=testusername&device=CA3DD91E8DFB4CBD7133E6D32854A9E3&gid=1&orderid=7633220171123&channel=test1cps&paymoney=0.1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '627' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '7633220171123' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('627','testusername','1','7633220171123','0.1','3','CA3DD91E8DFB4CBD7133E6D32854A9E3','2','183.14.132.155','1511405198','1511344749','113.92.153.93') [ RunTime:0.0003s ]
+

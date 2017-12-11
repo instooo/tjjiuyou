@@ -1,0 +1,360 @@
+<include file="Public/header" />
+<script src="__JS__/highcharts/highcharts.js"></script>
+<script src="__JS__/highcharts/modules/exporting.js"></script>
+<script src="__JS__/highcharts/themes/grid-light.js"></script>
+<script type="text/javascript" src="__JS__/date/monthPicker.js"></script>
+<link rel="stylesheet" type="text/css" href="__JS__/date/monthPicker.css" />
+<style>
+	.url_td{display:block;white-space: nowrap;text-overflow:ellipsis;width:350px;overflow: hidden}
+	.dwm{width:50px;height:30px;display:inline-block;text-align:center;line-height:30px;background:#2086ee;color:#fff;}
+	.dwm:hover{color:#fff;position:relative;top:1px;}
+	.calendar table{width:auto;}
+	
+</style>
+<div id="SiteMapPath">
+    <ul>
+        <li>
+            <a href="/">首页</a>
+        </li>
+        <li>
+            <a href="/Realtime/recharge">数据分析</a>
+        </li>
+        <li>注册用户充值趋势分析</li>
+    </ul>
+</div>
+<div id="MainContentDIV">
+    <link rel="stylesheet" type="text/css" href="__CSS__/managerMenu.css">
+    <include file="Public/left_menu" />
+	<style type="text/css">.dis{display:inline-block}.calendar table tbody td{float:left;}</style>
+    <div id="ManagerRight" class="ManagerRightShow">
+        <form id="myform" name="countform" method="get" action="/Charts/reg_pay_trend">
+            <div id="count_search">
+                <ul class="search_box">
+					 <li class="line" style="display:none;" id="monthCJ">
+						<label class="title" style="width:80px">月份选择：</label>
+						<div class="ta_date" id="div_month_picker">
+							<span class="date_title" id="month_picker"></span>
+							<a class="opt_sel" id="month_trigger" href="javascript:;">
+								<i class="i_orderd"></i>
+							</a>
+						</div>
+					</li>
+                    <li class="line" id="dateCJ">
+						<label class="title" style="width:80px">注册日期：</label>
+						<div class="ta_date" id="div_date_demo3">
+							<span class="date_title" id="date_demo3"></span>
+							<a class="opt_sel" id="input_trigger_demo3" href="#">
+								<i class="i_orderd"></i>
+							</a>
+						</div>
+					</li>
+					<li class="line"  id="dateCJ1">
+						<label class="title" style="width:80px">充值日期：</label>
+						<div class="ta_date" id="div_date_demo4">
+							<span class="date_title" id="date_demo4"></span>
+							<a class="opt_sel" id="input_trigger_demo4" href="#">
+								<i class="i_orderd"></i>
+							</a>
+						</div>
+					</li>
+					<li class="line" id="typeselect">
+						<a href="javascript:void(0);" id="day" class="dwm" style="background:#fff;color:#4597EA;border:1px solid #4597EA;">日</a>
+						<a href="javascript:void(0);" id="week"  class="dwm">周</a>
+						<a href="javascript:void(0);" id="month"  class="dwm">月</a>
+					</li>
+				</ul>
+				<ul class="search_box">
+                    <li class="line">
+                        <label class="title">游戏：</label>
+                        <label class="msg">
+                            <select name="gid" id="gid">
+                                <option value="">所有</option>
+                                <volist name="gamelist" id="vo"><option value="<{$vo.gid}>" <if condition="$gid eq $vo['gid']">selected</if>><{$vo.game}></option></volist>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="line">
+                        <label class="title">渠道类型：</label>
+                        <label class="msg">
+                            <select name="channeltype" id="channeltype">
+                                <option value="">请选择渠道类型</option>
+                                <volist name="typename" id="vo">
+                                    <option value="<{$vo.tid}>" <if condition="$type_name eq $vo['tid']">selected</if>><{$vo.name}></option>
+                                </volist>
+                            </select>
+                        </label>
+                    </li>
+                    <if condition="$sub_channel">
+                        <li class="line">
+                            <label class="title">一级栏目：</label>
+                            <label class="msg">
+                                <select name="sub_channel" id="sub_channel" onchange="getSecChannel(this)">
+                                    <option value="">请选择一级栏目</option>
+                                    <volist name="sub_channel" id="vo"><option value="<{$vo.id}>" <if condition="$sub_channel_val eq $vo['id']">selected</if>><{$vo.name}></option></volist>
+                                </select>
+                            </label>
+                        </li>
+                    </if>
+                   
+					<style>
+						.msg>ul{position:absolute;width:150px;border:1px solid #eee;background-color:#fff;z-index:999;}
+					</style>
+					<li class="line">
+                        <label class="title">二级栏目搜索：</label>
+                        <label class="msg" style="position:relative;">
+                           <input id="product_search" type="text" name="secsearch" value="<{$sec_search}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+					
+                    <li class="line">
+                        <input type="hidden" name="date" id="date" value="date">
+                        <input type="hidden" name="monthselect" id="monthSelect" value="">
+                        <input type="hidden" name="weeky" id="weeky" value="">
+                        <input type="hidden" name="monthy" id="monthy" value="">
+                        <input type="hidden" name="regstart" id="regstart" value="">
+						<input type="hidden" name="regend" id="regend" value="">
+						<input type="hidden" name="paystart" id="paystart" value="">
+						<input type="hidden" name="payend" id="payend" value="">
+                        <input type="button" name="searchbtn" id="searchbtn" value="搜索" class="manager-btn s-btn search-btn">
+                    </li>
+                </ul>
+            </div>
+            <div id="count_body">
+				 <div id="container" style="min-width:800px;height:600px;"></div>
+            </div>
+           
+        </form>
+        <div class="product-detail-desc mt-15">
+            <div class="title mb-5">
+                <span>注册用户充值趋势分析图</span>
+            </div>
+            <p class="pt-5"><span  style="font-weight:bold;">注册用户充值趋势分析图说明：</span>注册用户充值趋势分析图，用于分析所选择的注册时间段内注册的用户，在充值时间段内用户的每日充值金额走势。</p>
+            <p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>
+                使用者可以通过对注册日期选择，充值日期选择，游戏，一级栏目，二级栏目进行自定义，选择自己想查询的数据并点击搜索按钮实现在某段时间内注册用户在所选的充值日期内的充值情况。
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function (){
+		var datelist = '<{$datelist}>';
+        var dtlist = '<{$dtlist}>';
+		var money_sum = '<{$money_sum}>';
+		var num = '<{$num}>';
+        var charts;
+		Highcharts.getOptions().colors[0] = "#1B66DF";
+		Highcharts.getOptions().colors[1] = "#2F653F";
+		console.log(Highcharts.getOptions());
+		Highcharts.setOptions({
+            lang: {
+               　 printChart:"打印图表",
+                  downloadJPEG: "下载JPEG 图片" , 
+                  downloadPDF: "下载PDF文档"  ,
+                  downloadPNG: "下载PNG 图片"  ,
+                  downloadSVG: "下载SVG 矢量图" , 
+                  exportButtonTitle: "导出图片" 
+            }
+        });
+       $('#container').highcharts({
+			chart: {
+				zoomType: 'xy'
+			},
+			title: {
+				text: '注册用户充值趋势图'
+			},
+			subtitle: {
+                text: '充值总金额：'+money_sum+"元",
+                x: -20
+            },
+			xAxis: [{
+				categories: eval("("+datelist+")"),
+				crosshair: true
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					format: '{value}元',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				title: {
+					text: '充值金额',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				}
+			}, { 
+				title: {
+					text: '充值人数',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				labels: {
+					format: '{value} 人',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				opposite: true
+			}],
+			tooltip: {
+				shared: true
+			},
+			legend: {
+				layout: 'vertical',
+				align: 'left',
+				x: 120,
+				verticalAlign: 'top',
+				y: 100,
+				floating: true,
+				backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+			},
+			series: eval("("+dtlist+")"),
+		});
+		
+		var mydate = new Date();
+		mydate.setTime(mydate.getTime()-24*60*60*1000);
+		var dateRange = new pickerDateRange('date_demo3', {
+			aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+			isTodayValid: false,
+			startDate: mydate.getFullYear()+"-" + (mydate.getMonth()+1) + "-" + mydate.getDate(),
+			endDate: mydate.getFullYear()+"-" + (mydate.getMonth()+1) + "-" + mydate.getDate(),
+			//needCompare : true,
+			//isSingleDay : true,
+			//shortOpr : true,
+			defaultText: ' 至 ',
+			inputTrigger: 'input_trigger_demo3',
+			theme: 'ta',
+			success: function (obj) {
+				$("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+			}
+		});
+		var dateRange1 = new pickerDateRange('date_demo4', {
+			aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+			isTodayValid: false,
+			startDate: mydate.getFullYear()+"-" + (mydate.getMonth()+1) + "-" + mydate.getDate(),
+			endDate: mydate.getFullYear()+"-" + (mydate.getMonth()+1) + "-" + mydate.getDate(),
+			//needCompare : true,
+			//isSingleDay : true,
+			//shortOpr : true,
+			defaultText: ' 至 ',
+			inputTrigger: 'input_trigger_demo4',
+			theme: 'ta',
+			success: function (obj) {
+				$("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+			}
+		});
+		monthPicker.create('month_picker', { 
+			trigger : 'month_trigger', 
+			autoCommit : true, 
+			callback : function(obj){ 
+			$("#monthContainer").html('开始时间 : ' + obj.startDate + '结束时间 : ' + obj.endDate); 
+			} 
+		}); 
+		$('#searchbtn').click(function(){
+			var zhuce = $('#date_demo3').text().split("至");
+			var regStart = zhuce[0].trim();
+			var regEnd = zhuce[1].trim();
+			var chongzhi = $('#date_demo4').text().split("至");
+			var payStart = chongzhi[0].trim();
+			var payEnd = chongzhi[1].trim();
+			$("#regstart").val(regStart);
+			$("#regend").val(regEnd);
+			$("#paystart").val(payStart);
+			$("#payend").val(payEnd);
+			var Rstart = $("#regstart").val();
+			var Pstart = $("#paystart").val();
+			var month = $('#month_picker').text();
+			$('#monthSelect').val(month);
+			if(Rstart && Pstart){
+				if(Date.parse(new Date(Rstart)) > Date.parse(new Date(Pstart))){
+					alert("充值开始时间不能小于注册开始时间");
+					return false;
+				}
+				if(regStart.substr(0, 4) != regEnd.substr(0, 4)){
+					alert("注册时间必须为同一年");
+					return false;
+				}
+			}
+			$('#myform').submit();
+		});
+		
+		//点击日选择
+		$('#day').click(function(){
+			$('#typeselect>a').attr('style','');
+			$(this).attr('style','background:#fff;color:#4597EA;border:1px solid #4597EA;');
+			$('#date').val('date');
+			$('#weeky').val('');
+			$('#monthy').val('');
+			$('#monthCJ').hide();
+			$('#dateCJ').show();
+			$('#dateCJ1').show();
+		})	
+		$('#week').click(function(){
+			$('#typeselect>a').attr('style','');
+			$(this).attr('style','background:#fff;color:#4597EA;border:1px solid #4597EA;');
+			$('#date').val('');
+			$('#weeky').val('weeky');
+			$('#monthy').val('');
+			$('#monthCJ').hide();
+			$('#dateCJ').show();
+			$('#dateCJ1').show();
+		})	
+		$('#month').click(function(){
+			$('#typeselect>a').attr('style','');
+			$(this).attr('style','background:#fff;color:#4597EA;border:1px solid #4597EA;');
+			$('#date').val('');
+			$('#weeky').val('');
+			$('#monthy').val('monthy');
+			$('#monthCJ').show();
+			$('#dateCJ').hide();
+			$('#dateCJ1').hide();
+		})
+		//时间
+		var rstart = '<{$rstart}>';
+		var rend = '<{$rend}>';
+		var pstart = '<{$pstart}>';
+		var pend = '<{$pend}>';
+		var mon = '<{$month}>';
+		var wee = '<{$week}>';
+		var dat = '<{$date}>';
+		if(rstart && rend){
+			$('#date_demo3').html(rstart+'至'+rend);
+		}
+		if(pstart && pend){
+			$('#date_demo4').html(pstart+'至'+pend);
+		}
+		if(mon){
+			$('#typeselect>a').attr('style','');
+			$('#typeselect').children().eq(2).attr('style','background:#fff;color:#4597EA;border:1px solid #4597EA;');
+			$('#monthCJ').show();
+			$('#dateCJ').hide();
+			$('#dateCJ1').hide();
+			$('#month_picker').html(mon);
+		}
+		if(wee){
+			$('#typeselect>a').attr('style','');
+			$('#typeselect').children().eq(1).attr('style','background:#fff;color:#4597EA;border:1px solid #4597EA;');
+			$('#monthCJ').hide();
+			$('#dateCJ').show();
+			$('#dateCJ1').show();
+		}
+		if(dat){
+			$('#typeselect>a').attr('style','');
+			$('#typeselect').children().eq(0).attr('style','background:#fff;color:#4597EA;border:1px solid #4597EA;');
+			$('#monthCJ').hide();
+			$('#dateCJ').show();
+			$('#dateCJ1').show();
+		}
+    });
+    
+    //排序
+    function order(order) {
+        $('#order').attr('value', order);
+        $('#myform').submit();
+    }
+</script>
+<include file="Public/secchannel" />
+<include file="Public/footer" />

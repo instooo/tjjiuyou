@@ -1,0 +1,206 @@
+<include file="Public/header" />
+<style>
+	.url_td{display:block;white-space: nowrap;text-overflow:ellipsis;width:350px;overflow: hidden}
+	.level{cursor:pointer;}
+	.level:hover{background-color:#eee;}
+</style>
+<div id="SiteMapPath">
+    <ul>
+        <li>
+            <a href="/">首页</a>
+        </li>
+        <li>
+            <a href="/Realtime/trial">实时数据</a>
+        </li>
+        <li>试玩查询</li>
+    </ul>
+</div>
+<div id="MainContentDIV">
+    <link rel="stylesheet" type="text/css" href="__CSS__/managerMenu.css">
+    <include file="Public/left_menu" />
+    <div id="ManagerRight" class="ManagerRightShow">
+        <form id="myform" name="countform" method="get" action="/Realtime/trial">
+            <div class="moneyinfos clearfix">
+               <p style="font-size: 18px">试玩人数：<b class="price" style="font-size: 18px"><{$register_count}></b>人</p>
+               <p style="font-size: 18px">激活人数：<b class="price" style="font-size: 18px"><{$active_count}></b>人</p>
+            </div>
+
+            <div id="count_search">
+                <ul class="search_box">
+                    <li class="line">
+                        <label class="title" style="width:80px">日期选择：</label>
+                        <input type="hidden" class="start_input" name="start">
+                        <input type="hidden" class="end_input" name="end">
+                        <div class="ta_date" id="div_date_demo3">
+                            <span class="date_title" id="date_demo3"></span>
+                            <a class="opt_sel" id="input_trigger_demo3" href="#">
+                                <i class="i_orderd"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="line">
+                        <label class="title">游戏：</label>
+                        <label class="msg">
+                            <select name="gid" id="gid">
+                                <option value="">所有</option>
+                                <volist name="gamelist" id="vo"><option value="<{$vo.gid}>" <if condition="$gid eq $vo['gid']">selected</if>><{$vo.game}></option></volist>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="line">
+                        <label class="title">UID：</label>
+                        <label class="msg" style="position:relative;">
+                            <input id="uid_search" type="text" name="uid" value="<{$uid}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+                    <li class="line">
+                        <label class="title">唯一标识：</label>
+                        <label class="msg" style="position:relative;">
+                            <input id="device_id_search" type="text" name="device_id" value="<{$device_id}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+
+                    <li class="line">
+                        <label class="title">渠道类型：</label>
+                        <label class="msg">
+                            <select name="channeltype" id="channeltype">
+                                <option value="">请选择渠道类型</option>
+                                <volist name="typename" id="vo">
+                                    <option value="<{$vo.tid}>" <if condition="$type_name eq $vo['tid']">selected</if>><{$vo.name}></option>
+                                </volist>
+                            </select>
+                        </label>
+                    </li>
+
+                    <if condition="$sub_channel">
+                        <li class="line">
+                            <label class="title">一级栏目：</label>
+                            <label class="msg">
+                                <select name="sub_channel" id="sub_channel" onchange="getSecChannel(this)">
+                                    <option value="">请选择一级栏目</option>
+                                    <volist name="sub_channel" id="vo"><option value="<{$vo.id}>" <if condition="$sub_channel_val eq $vo['id']">selected</if>><{$vo.short_name}></option></volist>
+                                </select>
+                            </label>
+                        </li>
+                    </if>
+					
+					<style>
+						.msg>ul{position:absolute;width:150px;border:1px solid #eee;background-color:#fff;z-index:999;}
+					</style>
+					<li class="line">
+                        <label class="title">二级栏目搜索：</label>
+                        <label class="msg" style="position:relative;">
+                           <input id="product_search" type="text" name="secsearch" value="<{$sec_search}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+					<li class="line">
+						<label class="title">二级栏目快选：</label>
+						<label class="msg">
+							<input type="text" id="quick_select" name="c_keyword" value="<{$c_keyword}>" class="manager-input s-input">
+						</label>
+					</li>
+					
+                    <li class="line">
+                        <label class="title">每页条数：</label>
+                        <label class="msg">
+                            <select name="pagesize" style="width: 50px">
+                                <option value="10" <if condition="$pagesize eq 10">selected</if>>10</option>
+                                <option value="20" <if condition="$pagesize eq 20">selected</if>>20</option>
+                                <option value="30" <if condition="$pagesize eq 30">selected</if>>30</option>
+                                <option value="50" <if condition="$pagesize eq 50">selected</if>>50</option>
+                            </select>
+                        </label>
+                    </li>
+           
+                    <li class="bottom">
+                        <input type="hidden" name="order" id="order" value="">
+                        <input type="submit" name="searchbtn" value="搜索" class="manager-btn s-btn search-btn">
+                        <input type="button" name="excelbtn" value="导出EXCEL" class="manager-btn s-btn orange-btn ml-10">
+                    </li>
+                </ul>
+            </div>
+            <div id="count_body">
+                <table class="huitable">
+                    <thead>
+                    <tr align="left">
+                        <th onclick="order('uid')">UID</th>
+                        <th>游戏名</th>
+                        <th>设备唯一标识</th>
+                        <th onclick="order('register_time')">注册时间</th>
+                        <th>最后登录时间</th>
+                        <th>用户名【激活用户名】</th>
+                        <th onclick="order('level');" class="level">等级</th>
+                        <th>推广人员</th>
+                        <th onclick="order('register_ip')">注册IP</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <if condition="$list">
+                        <volist name="list" id="vo">
+                            <tr>
+                                <td><{$vo.uid}></td>
+                                <td><{$vo.gamename}></td>
+                                <td><{$vo.device_id}></td>
+                                <td><{$vo.register_time|date="Y-m-d H:i",###}></td>
+                                <td><{$vo.login_time|date="Y-m-d H:i",###}></td>
+                                <td><{$vo.username}><if condition="$vo['active_name']">【<{$vo.active_name}>】</if></td>
+                                <td><if condition="$vo['level'] eq null"> 0 <else /> <{$vo.level}> </if></td>
+                                <td><{$vo.channel_name}></td>
+                                <td><{$vo.register_ip}></td>
+                            </tr>
+                        </volist>
+                        <else />
+                        <tr><td colspan="9" style="text-align:center; font-size:24px; color:#ccc;">无记录</td></tr>
+                    </if>
+                    </tbody>
+                </table>
+            </div>
+            <div id="jsonpage" class="pagebox"><div class="pageinfo"><{$pagebar}></div></div>
+        </form>
+        <div class="product-detail-desc mt-15">
+            <div class="title mb-5">
+                <span>实时注册说明：</span>
+            </div>
+            <p class="pt-5"><span  style="font-weight:bold;">实时注册说明：</span>当前账号显示实时注册的详细信息，包括用户ID、游戏名称、注册时间、用户名、推广人员、充值IP和在选择时间内的注册人数等信息。</p>
+            <p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>使用者可以通过对日期选择、游戏、一级栏目、二级栏目和每页条数进行自定义，选择自己想查询的数据并点击搜索按钮进行显示；并可以通过“导出EXCEL”按钮导出数据。</p>
+        </div>
+    </div>
+</div>
+<script src="__JS__/laydate/laydate.js"></script>
+<script>
+    $(function () {
+        var start = "<{$start}>";
+        var end = "<{$end}>";
+        $('.start_input').attr('value',start);
+        $('.end_input').attr('value',end);
+        var dateRange = new pickerDateRange('date_demo3', {
+            aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+            isTodayValid: true,
+            startDate: start,
+            endDate: end,
+            defaultText: ' 至 ',
+            inputTrigger: 'input_trigger_demo3',
+            theme: 'ta',
+            success: function (obj) {
+                $("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+                $("#input_trigger_demo3").parents('li.line').find('.start_input').attr('value', obj.startDate);
+                $("#input_trigger_demo3").parents('li.line').find('.end_input').attr('value', obj.endDate);
+            }
+        });
+    	//第一次默认获取二级栏目
+		$('#quick_select').blur(function(){
+            QuickSelect();
+        });
+		
+    });
+    //排序
+    function order(order) {
+        $('#order').attr('value', order);
+        $('#myform').submit();
+    }
+	
+	
+</script>
+
+<include file="Public/secchannel" />
+<include file="Public/footer" />

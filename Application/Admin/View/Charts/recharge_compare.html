@@ -1,0 +1,313 @@
+<include file="Public/header" />
+<script src="__JS__/highcharts/highcharts.js"></script>
+
+<style>.url_td{display:block;white-space: nowrap;text-overflow:ellipsis;width:350px;overflow: hidden}</style>
+<div id="SiteMapPath">
+    <ul>
+        <li>
+            <a href="/">首页</a>
+        </li>
+        <li>
+            <a href="/Realtime/recharge">数据分析</a>
+        </li>
+        <li>充值走势对比</li>
+    </ul>
+</div>
+<div id="MainContentDIV">
+    <link rel="stylesheet" type="text/css" href="__CSS__/managerMenu.css">
+    <include file="Public/left_menu" />
+
+    <div id="ManagerRight" class="ManagerRightShow">
+        <form id="myform" name="countform" method="get" action="/Charts/recharge_compare">
+             <ul class="manager-tab full-manager-tab" id="switch">
+                <li>
+                    <a href="javascript:;" data="money">充值金额走势</a>
+                </li>
+				<li>
+                    <a href="javascript:;" data="now_money">当期金额走势</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data="num">充值人数走势</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data="dan_num">当期人数走势</a>
+                </li>
+            </ul>
+            <div id="count_search">
+                <ul class="search_box">
+                    <li class="line">
+                        <label class="title" style="width:80px">日期选择：</label>
+                        <input type="hidden" class="start_input" name="start1">
+                        <input type="hidden" class="end_input" name="end1">
+                        <div class="ta_date" id="div_date_demo3">
+                            <span class="date_title" id="date_demo3"></span>
+                            <a class="opt_sel" id="input_trigger_demo3" href="#">
+                                <i class="i_orderd"></i>
+                            </a>
+                        </div>
+                    </li>
+					<li class="line">
+                        <label class="title" style="width:80px">日期选择：</label>
+                        <input type="hidden" class="start_input" name="start2">
+                        <input type="hidden" class="end_input" name="end2">
+                        <div class="ta_date" id="div_date_demo4">
+                            <span class="date_title" id="date_demo4"></span>
+                            <a class="opt_sel" id="input_trigger_demo4" href="#">
+                                <i class="i_orderd"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="line">
+                        <label class="title">游戏：</label>
+                        <label class="msg">
+                            <select name="gid" id="gid">
+                                <option value="">所有</option>
+                                <volist name="gamelist" id="vo"><option value="<{$vo.gid}>" <if condition="$gid eq $vo['gid']">selected</if>><{$vo.game}></option></volist>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="line">
+                        <label class="title">渠道类型：</label>
+                        <label class="msg">
+                            <select name="channeltype" id="channeltype">
+                                <option value="">请选择渠道类型</option>
+                                <volist name="typename" id="vo">
+                                    <option value="<{$vo.tid}>" <if condition="$type_name eq $vo['tid']">selected</if>><{$vo.name}></option>
+                                </volist>
+                            </select>
+                        </label>
+                    </li>
+                    <if condition="$sub_channel">
+                        <li class="line">
+                            <label class="title">一级栏目：</label>
+                            <label class="msg">
+                                <select name="sub_channel" id="sub_channel" onchange="getSecChannel(this)">
+                                    <option value="">请选择一级栏目</option>
+                                    <volist name="sub_channel" id="vo"><option value="<{$vo.id}>" <if condition="$sub_channel_val eq $vo['id']">selected</if>><{$vo.name}></option></volist>
+                                </select>
+                            </label>
+                        </li>
+                    </if>
+					<style>
+						.msg>ul{position:absolute;width:150px;border:1px solid #eee;background-color:#fff;z-index:999;}
+					</style>
+					<li class="line">
+                        <label class="title">二级栏目搜索：</label>
+                        <label class="msg" style="position:relative;">
+                           <input id="product_search" type="text" name="secsearch" value="<{$sec_search}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+
+					
+                    <li class="bottom">
+                        <input type="hidden" name="order" id="order" value="">
+                        <input type="submit" name="searchbtn" value="搜索" class="manager-btn s-btn search-btn">
+                        <input type="button" name="excelbtn" value="导出EXCEL" class="manager-btn s-btn orange-btn ml-10">
+                    </li>
+                </ul>
+            </div>
+            <div id="count_body">
+				 <div id="container" style="min-width:800px;height:400px;"></div>
+            </div>
+           
+        </form>
+        <div class="product-detail-desc mt-15">
+            <div class="title mb-5">
+                <span>充值走势对比说明：</span>
+            </div>
+            <p class="pt-5"><span  style="font-weight:bold;">充值走势对比说明：</span>充值走势对比，对于当前账号显示充值走势的对比图，充值走势对比会展示不同时间的充值金额和人数的对比图和当期的充值金额和人数的对比图。</p>
+            <p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>
+                使用者可以通过对两个日期选择，游戏，一级栏目，二级栏目进行自定义，选择自己想查询的数据并点击搜索按钮实现四种数据的对比图。<br/>
+                1.点击充值金额走势字样显示两个时间段的充值金额对比图并显示时间内的总额<br/>
+                2.点击当期金额走势字样显示两个时间段的当期金额对比图并显示当期时间内的总额<br/>
+                3.点击充值人数走势字样显示两个时间段的充值人数对比图并显示时间内的总人数<br/>
+                4.点击当期人数走势字样显示两个时间段的当期人数对比图并显示当期时间内的总人数
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+	 $(function () {
+        var klist = '<{$klist}>';
+        var money_v = '<{$money_v}>';
+        var num_v = '<{$num_v}>';
+		var now_money_v = '<{$now_money_v}>';
+        var dan_num_v = '<{$dan_num_v}>';
+        var subtitle_money = '<{$subtitle_money}>';
+        var subtitle_num = '<{$subtitle_num}>';
+		var subtitle_now_money = '<{$subtitle_now_money}>';
+        var subtitle_dan_num = '<{$subtitle_dan_num}>';
+        var charts;
+        var data_source = {
+            chart: {
+                renderTo: 'container',
+                type: 'line'
+            },
+            title: {
+                text: '每日充值金额对比',
+                x: -20 //center
+            },
+            subtitle: {
+                text: subtitle_now_money,
+                x: -20
+            },
+            xAxis: {
+                categories: eval("("+klist+")")
+            },
+            yAxis: {
+                title: {
+                    text: '充值金额 (￥)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '￥'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true,
+                        formatter:function () {
+                            return "￥"+(this.y)
+                        }
+                    }
+                }
+            },
+            series: eval("("+now_money_v+")"),
+            credits: {enabled:false}
+        };
+        charts = new Highcharts.Chart(data_source);
+
+        $('#switch li').click(function () {
+            var colorArr = ['#7cb5ec','#808080'];
+            if ($(this).find('a').attr('data') == 'money') {	
+                charts.options.plotOptions.line.dataLabels.formatter = function () {return "￥"+(this.y)};
+                charts.setTitle({text:'每日充值金额趋势'}, {text:subtitle_money});
+                while (charts.series.length>0) {
+                    charts.series[0].remove();
+                }
+                var series = eval("("+money_v+")");
+                for (var j in series) {
+                    series[j].tooltip = {valueSuffix: '￥'};
+                    series[j].color = colorArr[j];
+                    charts.addSeries(series[j]);
+                }
+                charts.yAxis[0].setTitle({text:'充值金额 (￥)'});
+            }else if($(this).find('a').attr('data') == 'num') {
+                charts.options.plotOptions.line.dataLabels.formatter = function () {return (this.y)+"人"};
+                charts.setTitle({text:'每日充值人数趋势'}, {text:subtitle_num});
+                while (charts.series.length>0) {
+                    charts.series[0].remove();
+                }
+                var series = eval("("+num_v+")");
+                for (var j in series) {
+                    series[j].tooltip = {valueSuffix: '人'};
+                    series[j].color = colorArr[j];
+                    charts.addSeries(series[j]);
+                }
+                charts.yAxis[0].setTitle({text:'充值人数 (人)'});
+			}else if($(this).find('a').attr('data') == 'now_money') {
+                charts.options.plotOptions.line.dataLabels.formatter = function () {return "￥"+(this.y)};
+                charts.setTitle({text:'当期充值金额趋势'}, {text:subtitle_now_money});
+                while (charts.series.length>0) {
+                    charts.series[0].remove();
+                }
+                var series = eval("("+now_money_v+")");
+                for (var j in series) {
+                    series[j].tooltip = {valueSuffix: '￥'};
+                    series[j].color = colorArr[j];
+                    charts.addSeries(series[j]);
+                }
+                charts.yAxis[0].setTitle({text:'当期充值金额 (￥)'});
+            }else if($(this).find('a').attr('data') == 'dan_num') {
+                charts.options.plotOptions.line.dataLabels.formatter = function () {return (this.y)+"人"};
+                charts.setTitle({text:'当期充值人数趋势'}, {text:subtitle_dan_num});
+                while (charts.series.length>0) {
+                    charts.series[0].remove();
+                }
+                var series = eval("("+dan_num_v+")");
+                for (var j in series) {
+                    series[j].tooltip = {valueSuffix: '人'};
+                    series[j].color = colorArr[j];
+                    charts.addSeries(series[j]);
+                }
+                charts.yAxis[0].setTitle({text:'当期充值人数 (人)'});
+			}else {
+                return false;
+            }
+            charts.redraw();
+        });   
+    });
+    
+   
+
+
+
+    $(function () {
+        var start = "<{$start1}>";
+        var end = "<{$end1}>";
+        $('.start_input').attr('value',start);
+        $('.end_input').attr('value',end);
+        var dateRange = new pickerDateRange('date_demo3', {
+            aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+            isTodayValid: true,
+            startDate: start,
+            endDate: end,
+            //needCompare : true,
+            //isSingleDay : true,
+            //shortOpr : true,
+            defaultText: ' 至 ',
+            inputTrigger: 'input_trigger_demo3',
+            theme: 'ta',
+            success: function (obj) {
+                $("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+                $("#input_trigger_demo3").parents('li.line').find('.start_input').attr('value', obj.startDate);
+                $("#input_trigger_demo3").parents('li.line').find('.end_input').attr('value', obj.endDate);
+            }
+        });
+    });
+	
+	
+	$(function () {
+        var start = "<{$start2}>";
+        var end = "<{$end2}>";
+        $('.start_input').attr('value',start);
+        $('.end_input').attr('value',end);
+        var dateRange = new pickerDateRange('date_demo4', {
+            aRecent7Days: 'aRecent7DaysDemo4', //最近7天
+            isTodayValid: true,
+            startDate: start,
+            endDate: end,
+            //needCompare : true,
+            //isSingleDay : true,
+            //shortOpr : true,
+            defaultText: ' 至 ',
+            inputTrigger: 'input_trigger_demo4',
+            theme: 'ta',
+            success: function (obj) {
+                $("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+                $("#input_trigger_demo4").parents('li.line').find('.start_input').attr('value', obj.startDate);
+                $("#input_trigger_demo4").parents('li.line').find('.end_input').attr('value', obj.endDate);
+            }
+        });
+    });
+	
+    //排序
+    function order(order) {
+        $('#order').attr('value', order);
+        $('#myform').submit();
+    }
+</script>
+<include file="Public/secchannel" />
+<include file="Public/footer" />

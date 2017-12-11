@@ -1,0 +1,44 @@
+[ 2017-12-02T17:13:32+08:00 ] 117.136.79.138 /jyggapi/index.php/user/install/?device=DAEBFA25CA7C8C6B65322A065AB1D7FD&gid=1&androidid=157429a84b359d8d&sign=d92f8444219594ca9e26c8fab5c4bbef&time=1512205995546&imei=861643033840583&mac=02%3A00%3A00%3A00%3A00%3A00&channel=test2cps&os=android
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test2cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'DAEBFA25CA7C8C6B65322A065AB1D7FD' AND `channel` = 5 AND `os` = 'android' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-12-02T17:13:32+08:00 ] 117.136.79.138 /jyggapi/index.php/user/login/?device=DAEBFA25CA7C8C6B65322A065AB1D7FD&gid=1&sign=256c4aeb5952d855cff567044b21f43a&time=1512206007815&username=yiyi&uid=10012&channel=test2cps&os=android
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test2cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0008s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('10012','yiyi','1','DAEBFA25CA7C8C6B65322A065AB1D7FD','5','1512206012','117.136.79.138') [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-12-02T17:13:32+08:00 ] 117.136.79.138 /jyggapi/index.php/user/roleinfo/?gid=1&sid=1&sign=62a66bbf27a603c8f3916a5f61b16be1&time=1512206009558&username=yiyi&role=1&uid=10012&level=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001344s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '10012' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_game_role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game_role` WHERE `uid` = '10012' AND `gid` = 1 AND `sid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `mygame_game_role` SET `role`='1',`level`='0' WHERE `uid` = '10012' AND `gid` = 1 AND `sid` = 1 [ RunTime:0.0005s ]
+

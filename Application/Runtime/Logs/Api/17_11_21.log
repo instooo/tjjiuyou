@@ -1,0 +1,49 @@
+[ 2017-11-21T20:21:51+08:00 ] 113.116.91.155 /jyggapi/index.php/user/roleinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001003s ]
+NOTIC: [8] Undefined index: uid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 182 行.
+NOTIC: [8] Undefined index: username /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 183 行.
+NOTIC: [8] Undefined index: gid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 184 行.
+NOTIC: [8] Undefined index: sid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 185 行.
+NOTIC: [8] Undefined index: role /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 186 行.
+NOTIC: [8] Undefined index: level /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 187 行.
+NOTIC: [8] Undefined index: time /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 188 行.
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2017-11-21T20:22:19+08:00 ] 113.116.91.155 /jyggapi/index.php/user/roleinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+NOTIC: [8] Undefined index: uid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 182 行.
+NOTIC: [8] Undefined index: username /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 183 行.
+NOTIC: [8] Undefined index: gid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 184 行.
+NOTIC: [8] Undefined index: sid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 185 行.
+NOTIC: [8] Undefined index: role /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 186 行.
+NOTIC: [8] Undefined index: level /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 187 行.
+NOTIC: [8] Undefined index: time /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 188 行.
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2017-11-21T20:28:10+08:00 ] 113.116.91.155 /jyggapi/index.php/user/roleinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+NOTIC: [8] Undefined index: uid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 182 行.
+NOTIC: [8] Undefined index: username /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 183 行.
+NOTIC: [8] Undefined index: gid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 184 行.
+NOTIC: [8] Undefined index: sid /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 185 行.
+NOTIC: [8] Undefined index: role /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 186 行.
+NOTIC: [8] Undefined index: level /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 187 行.
+NOTIC: [8] Undefined index: time /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 188 行.
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = null AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+

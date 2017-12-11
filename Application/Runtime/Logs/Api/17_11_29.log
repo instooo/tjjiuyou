@@ -1,0 +1,517 @@
+[ 2017-11-29T10:43:22+08:00 ] 121.35.128.78 /jyggapi/index.php/user/install/?device=BCEB3874901010BC55D65BA44300504B&gid=1&androidid=efaa3eea1b0f40a8&sign=0e3f57e74d9eb3a215f40f9e4cc72b18&time=1511923399101&imei=866940028280741&mac=88%3A28%3Ab3%3A3f%3Aca%3A79&channel=test1cps&os=android
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'BCEB3874901010BC55D65BA44300504B' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-11-29T10:47:14+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=f18d6f3520a954af4c34b5b86c9242ad&androidid=96d0c6fb3c9d12c1&os=android&time=1511923634743&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `mygame_install` (`gid`,`device_id`,`channel`,`os`,`channel_name`,`total_channel`,`ip`,`install_time`) VALUES ('1','D217370790D5B6C176F9D6AF9F8E6CA0','3','android','test1cps','2','183.14.135.131','1511923634') [ RunTime:0.0005s ]
+
+[ 2017-11-29T10:47:17+08:00 ] 183.14.135.131 /jyggapi/index.php/user/register/?sign=5d4413bc3f89c9cafc6210850af981b5&uid=627&os=android&time=1511923637028&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '627' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T10:47:21+08:00 ] 183.14.135.131 /jyggapi/index.php/user/login/?sign=f9280d46fa4642f48713ac328d3d70db&uid=627&os=android&time=1511923641199&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('627','testusername','1','D217370790D5B6C176F9D6AF9F8E6CA0','3','1511923641','183.14.135.131') [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-11-29T10:47:22+08:00 ] 183.14.135.131 /jyggapi/index.php/pay/paylog/?sign=3aa2bc12836b996ed0a789b27a9ad7ec&uid=627&time=1511923642353&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&orderid=2400420171129&channel=test1cps&paymoney=0.1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '627' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '2400420171129' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('627','testusername','1','2400420171129','0.1','3','D217370790D5B6C176F9D6AF9F8E6CA0','2','183.14.135.131','1511923642','1511344749','113.92.153.93') [ RunTime:0.0003s ]
+
+[ 2017-11-29T10:47:30+08:00 ] 183.14.135.131 /jyggapi/index.php/pay/paylog/?sign=c5446763ed2888ab24e08eb082fbd007&uid=627&time=1511923650646&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&orderid=8342720171129&channel=test1cps&paymoney=0.1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_member` WHERE `uid` = '627' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_pay_log` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_pay_log` WHERE `order_id` = '8342720171129' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `mygame_pay_log` (`uid`,`username`,`gid`,`order_id`,`pay_money`,`channel`,`device_id`,`total_channel`,`ip`,`pay_time`,`register_time`,`register_ip`) VALUES ('627','testusername','1','8342720171129','0.1','3','D217370790D5B6C176F9D6AF9F8E6CA0','2','183.14.135.131','1511923650','1511344749','113.92.153.93') [ RunTime:0.0003s ]
+
+[ 2017-11-29T10:47:31+08:00 ] 183.14.135.131 /jyggapi/index.php/user/login/?sign=f43c166129d39c1c3b3abedff0a3ea1a&uid=627&os=android&time=1511923651530&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0007s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('627','testusername','1','D217370790D5B6C176F9D6AF9F8E6CA0','3','1511923651','183.14.135.131') [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-11-29T10:47:32+08:00 ] 183.14.135.131 /jyggapi/index.php/user/login/?sign=a36c65358b3f3b746d0d22cd12d9e4f2&uid=627&os=android&time=1511923651929&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0007s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('627','testusername','1','D217370790D5B6C176F9D6AF9F8E6CA0','3','1511923652','183.14.135.131') [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-11-29T10:47:32+08:00 ] 183.14.135.131 /jyggapi/index.php/user/login/?sign=466445d87ee176f61e1f65e9ee798739&uid=627&os=android&time=1511923652113&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0006s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('627','testusername','1','D217370790D5B6C176F9D6AF9F8E6CA0','3','1511923652','183.14.135.131') [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-11-29T10:47:32+08:00 ] 183.14.135.131 /jyggapi/index.php/user/login/?sign=8948eb38964498819fc4b48df4b5a237&uid=627&os=android&time=1511923652313&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0008s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('627','testusername','1','D217370790D5B6C176F9D6AF9F8E6CA0','3','1511923652','183.14.135.131') [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-11-29T10:47:32+08:00 ] 183.14.135.131 /jyggapi/index.php/user/login/?sign=b2bd46d2abe58850d7fef7e3d5518ea7&uid=627&os=android&time=1511923652479&username=testusername&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_login_log` [ RunTime:0.0006s ]
+SQL: INSERT INTO `mygame_login_log` (`uid`,`username`,`gid`,`device_id`,`channel`,`login_time`,`ip`) VALUES ('627','testusername','1','D217370790D5B6C176F9D6AF9F8E6CA0','3','1511923652','183.14.135.131') [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: register /home/wwwroot/instooo/public_html/jyggapi/Application/Api/Controller/UserController.class.php 第 50 行.
+
+[ 2017-11-29T14:42:48+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=026222cfd9dee49e224fee8fb449dbcc&androidid=96d0c6fb3c9d12c1&os=android&time=1511937768251&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-29T14:45:52+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=7d9206929a12fbfdb6afb6957194a63e&androidid=96d0c6fb3c9d12c1&os=android&time=1511937951924&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T14:46:53+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=765cec8c2408fd9947ee619f59dae8b8&androidid=96d0c6fb3c9d12c1&os=android&time=1511938013172&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T14:51:02+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=f64381d1fd3f9ef6b2f6e924f3242894&androidid=96d0c6fb3c9d12c1&os=android&time=1511938262240&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T14:53:54+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=ae7bbd2afce3204e6e9ae7718aa42e50&androidid=96d0c6fb3c9d12c1&os=android&time=1511938429183&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T14:58:45+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=b1212f436c9df250552e83a9895acac7&androidid=96d0c6fb3c9d12c1&os=android&time=1511938725638&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T15:19:26+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=7e710c40bd6526b26f8c81ea0fc3132e&androidid=96d0c6fb3c9d12c1&os=android&time=1511939966485&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T15:24:52+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=35756c776e972d49ef84a615ecb3d010&androidid=96d0c6fb3c9d12c1&os=android&time=1511940292487&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-11-29T15:28:35+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=a0f43df23c8aade1248fd4e26d5345c4&androidid=96d0c6fb3c9d12c1&os=android&time=1511940515645&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T15:29:35+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=7a0c5474bcc4c9220c252c99fba4bf12&androidid=96d0c6fb3c9d12c1&os=android&time=1511940575773&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-11-29T15:30:53+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=c7d22ea0bdac2635b27b1c67753dd20d&androidid=96d0c6fb3c9d12c1&os=android&time=1511940653002&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T15:33:42+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=01b07f6f566ad3d8a32c77de0ebf3126&androidid=96d0c6fb3c9d12c1&os=android&time=1511940822291&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T15:34:02+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=9942cada60479928629994e3dfb79c52&androidid=96d0c6fb3c9d12c1&os=android&time=1511940842760&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T15:35:26+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=4407f71891f5c9f6f22b104a38626e06&androidid=96d0c6fb3c9d12c1&os=android&time=1511940926296&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-11-29T15:44:13+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=f0fe4a2831be4a05e464cdc62b091e35&androidid=96d0c6fb3c9d12c1&os=android&time=1511941453488&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000694s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T15:51:30+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=ef4dcc394dd53302ead061b0f4999cb6&androidid=96d0c6fb3c9d12c1&os=android&time=1511941890009&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-11-29T16:23:03+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=12beef84f0a269c26aee08e1fce3439c&androidid=96d0c6fb3c9d12c1&os=android&time=1511943783001&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T16:50:56+08:00 ] 183.14.135.131 /jyggapi/index.php/user/install/?sign=9b94654973332fda20c4c91c665973bb&androidid=96d0c6fb3c9d12c1&os=android&time=1511945456684&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T18:24:49+08:00 ] 183.14.133.89 /jyggapi/index.php/user/install/?sign=089d78262fe7b5b80381eba7c3e0e988&androidid=96d0c6fb3c9d12c1&os=android&time=1511951089608&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T18:25:46+08:00 ] 183.14.133.89 /jyggapi/index.php/user/install/?sign=8459c3828fb9fd02e4edbd1eebe39ee2&androidid=96d0c6fb3c9d12c1&os=android&time=1511951146741&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T18:29:22+08:00 ] 183.14.133.89 /jyggapi/index.php/user/install/?sign=9b094f8e0d0ce1254e3b3994d9d71048&androidid=96d0c6fb3c9d12c1&os=android&time=1511951363013&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T18:31:02+08:00 ] 183.14.133.89 /jyggapi/index.php/user/install/?sign=8e12e1626560cb5b73672752dd92c661&androidid=96d0c6fb3c9d12c1&os=android&time=1511951462515&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-11-29T18:35:25+08:00 ] 183.14.133.89 /jyggapi/index.php/user/install/?sign=ece16b2618cb2bbe1a17ff297cd4afe1&androidid=96d0c6fb3c9d12c1&os=android&time=1511951725020&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T18:39:48+08:00 ] 183.14.133.89 /jyggapi/index.php/user/install/?sign=f08e4d502a998870ac2667444684c92e&androidid=96d0c6fb3c9d12c1&os=android&time=1511951988561&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2017-11-29T18:47:39+08:00 ] 183.14.133.89 /jyggapi/index.php/user/install/?sign=1a61e5a6e33d4ad85461d77f7e30113e&androidid=96d0c6fb3c9d12c1&os=android&time=1511952459640&imei=864895021773328&device=D217370790D5B6C176F9D6AF9F8E6CA0&gid=1&mac=1C%3A1B%3A0D%3AE2%3A66%3A34&channel=test1cps
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `mygame_game` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mygame_game` WHERE `gid` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `short_name` = 'test1cps' AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `mygame_install` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mygame_install` WHERE `gid` = 1 AND `device_id` = 'D217370790D5B6C176F9D6AF9F8E6CA0' AND `channel` = 3 AND `os` = 'android' LIMIT 1   [ RunTime:0.0001s ]
+

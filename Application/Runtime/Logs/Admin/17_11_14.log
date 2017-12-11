@@ -1,0 +1,251 @@
+[ 2017-11-14T16:22:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-11-14T16:22:44+08:00 ] 127.0.0.1 /index.php/Public/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: user D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\3c5566b2bfbf6ef00ac5366ba47246fe.php 第 97 行.
+NOTIC: [8] Undefined index: user D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\3c5566b2bfbf6ef00ac5366ba47246fe.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-11-14T16:22:44+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-11-14T16:22:45+08:00 ] 127.0.0.1 /Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `mygame_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0070s ]
+SQL: SELECT `role_id` FROM `mygame_role_user` WHERE ( user_id=68 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `mygame_user` SET `last_login_time`='1510647765',`login_count`=login_count+1 WHERE `id` = 68 [ RunTime:0.0000s ]
+
+[ 2017-11-14T16:22:45+08:00 ] 127.0.0.1 /index.php/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `mygame_role` [ RunTime:0.0040s ]
+SQL: SELECT User.id AS id,User.username AS username,User.nickname AS nickname,User.realname AS realname,User.password AS password,User.bind_account AS bind_account,User.last_login_time AS last_login_time,User.last_login_ip AS last_login_ip,User.login_count AS login_count,User.verify AS verify,User.email AS email,User.remark AS remark,User.create_time AS create_time,User.update_time AS update_time,User.status AS status,User.info AS info,Role.id AS roleid,Role.name AS rolename FROM mygame_user User  JOIN mygame_role_user Role_user ON User.id=Role_user.user_id LEFT JOIN mygame_role Role ON Role_user.role_id=Role.id WHERE User.id = '68' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_node` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`level`,`ismenu`,`sort`,(pid*level*sort) as sortby FROM `mygame_node` WHERE `status` = 1 ORDER BY sortby desc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `mygame_user` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 117 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-14T16:22:49+08:00 ] 127.0.0.1 /System/channel_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0390s ]
+SQL: SHOW COLUMNS FROM `mygame_role` [ RunTime:0.0120s ]
+SQL: SELECT User.id AS id,User.username AS username,User.nickname AS nickname,User.realname AS realname,User.password AS password,User.bind_account AS bind_account,User.last_login_time AS last_login_time,User.last_login_ip AS last_login_ip,User.login_count AS login_count,User.verify AS verify,User.email AS email,User.remark AS remark,User.create_time AS create_time,User.update_time AS update_time,User.status AS status,User.info AS info,Role.id AS roleid,Role.name AS rolename FROM mygame_user User  JOIN mygame_role_user Role_user ON User.id=Role_user.user_id LEFT JOIN mygame_role Role ON Role_user.role_id=Role.id WHERE User.id = '68' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `mygame_node` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`level`,`ismenu`,`sort`,(pid*level*sort) as sortby FROM `mygame_node` WHERE `status` = 1 ORDER BY sortby desc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_user_channel` [ RunTime:0.0060s ]
+SQL: SELECT c.id,c.pid,c.short_name,c.name,c.tid FROM mygame_user_channel uc LEFT JOIN mygame_channel c ON c.id=uc.cid  WHERE uc.user_id = '68' AND c.pid = 0  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `pid` = 0  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: channelid D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 336 行.
+NOTIC: [8] Undefined index: s_username D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 340 行.
+NOTIC: [8] Undefined variable: map D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 344 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mygame_channel` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: map D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 347 行.
+SQL: SELECT * FROM mygame_channel c ORDER BY id desc LIMIT 0,20   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: s_username D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\64dc28ba781705159eac3c1c97288068.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-14T16:22:57+08:00 ] 127.0.0.1 /index.php/System/channel_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `mygame_role` [ RunTime:0.0040s ]
+SQL: SELECT User.id AS id,User.username AS username,User.nickname AS nickname,User.realname AS realname,User.password AS password,User.bind_account AS bind_account,User.last_login_time AS last_login_time,User.last_login_ip AS last_login_ip,User.login_count AS login_count,User.verify AS verify,User.email AS email,User.remark AS remark,User.create_time AS create_time,User.update_time AS update_time,User.status AS status,User.info AS info,Role.id AS roleid,Role.name AS rolename FROM mygame_user User  JOIN mygame_role_user Role_user ON User.id=Role_user.user_id LEFT JOIN mygame_role Role ON Role_user.role_id=Role.id WHERE User.id = '68' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_node` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`level`,`ismenu`,`sort`,(pid*level*sort) as sortby FROM `mygame_node` WHERE `status` = 1 ORDER BY sortby desc  [ RunTime:0.0270s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `pid` = 0  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_channel_type` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `mygame_channel_type`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-14T16:23:20+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `mygame_role` [ RunTime:0.0050s ]
+SQL: SELECT User.id AS id,User.username AS username,User.nickname AS nickname,User.realname AS realname,User.password AS password,User.bind_account AS bind_account,User.last_login_time AS last_login_time,User.last_login_ip AS last_login_ip,User.login_count AS login_count,User.verify AS verify,User.email AS email,User.remark AS remark,User.create_time AS create_time,User.update_time AS update_time,User.status AS status,User.info AS info,Role.id AS roleid,Role.name AS rolename FROM mygame_user User  JOIN mygame_role_user Role_user ON User.id=Role_user.user_id LEFT JOIN mygame_role Role ON Role_user.role_id=Role.id WHERE User.id = '68' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_node` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`level`,`ismenu`,`sort`,(pid*level*sort) as sortby FROM `mygame_node` WHERE `status` = 1 ORDER BY sortby desc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `mygame_user` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 117 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-14T16:23:23+08:00 ] 127.0.0.1 /System/channel_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `mygame_role` [ RunTime:0.0040s ]
+SQL: SELECT User.id AS id,User.username AS username,User.nickname AS nickname,User.realname AS realname,User.password AS password,User.bind_account AS bind_account,User.last_login_time AS last_login_time,User.last_login_ip AS last_login_ip,User.login_count AS login_count,User.verify AS verify,User.email AS email,User.remark AS remark,User.create_time AS create_time,User.update_time AS update_time,User.status AS status,User.info AS info,Role.id AS roleid,Role.name AS rolename FROM mygame_user User  JOIN mygame_role_user Role_user ON User.id=Role_user.user_id LEFT JOIN mygame_role Role ON Role_user.role_id=Role.id WHERE User.id = '68' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `mygame_node` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`level`,`ismenu`,`sort`,(pid*level*sort) as sortby FROM `mygame_node` WHERE `status` = 1 ORDER BY sortby desc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_user_channel` [ RunTime:0.0030s ]
+SQL: SELECT c.id,c.pid,c.short_name,c.name,c.tid FROM mygame_user_channel uc LEFT JOIN mygame_channel c ON c.id=uc.cid  WHERE uc.user_id = '68' AND c.pid = 0  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `pid` = 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: channelid D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 336 行.
+NOTIC: [8] Undefined index: s_username D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 340 行.
+NOTIC: [8] Undefined variable: map D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 344 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mygame_channel` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: map D:\data\wwwroot\web\sycps.7477.me\Application\Admin\Controller\SystemController.class.php 第 347 行.
+SQL: SELECT * FROM mygame_channel c ORDER BY id desc LIMIT 0,20   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: s_username D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\64dc28ba781705159eac3c1c97288068.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-14T16:23:26+08:00 ] 127.0.0.1 /index.php/System/channel_add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `mygame_role` [ RunTime:0.0040s ]
+SQL: SELECT User.id AS id,User.username AS username,User.nickname AS nickname,User.realname AS realname,User.password AS password,User.bind_account AS bind_account,User.last_login_time AS last_login_time,User.last_login_ip AS last_login_ip,User.login_count AS login_count,User.verify AS verify,User.email AS email,User.remark AS remark,User.create_time AS create_time,User.update_time AS update_time,User.status AS status,User.info AS info,Role.id AS roleid,Role.name AS rolename FROM mygame_user User  JOIN mygame_role_user Role_user ON User.id=Role_user.user_id LEFT JOIN mygame_role Role ON Role_user.role_id=Role.id WHERE User.id = '68' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mygame_node` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`level`,`ismenu`,`sort`,(pid*level*sort) as sortby FROM `mygame_node` WHERE `status` = 1 ORDER BY sortby desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `mygame_channel` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `mygame_channel` WHERE `pid` = 0  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `mygame_channel_type` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `mygame_channel_type`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

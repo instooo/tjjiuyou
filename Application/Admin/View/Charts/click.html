@@ -1,0 +1,183 @@
+<include file="Public/header" />
+<script src="__JS__/highcharts/highcharts.js"></script>
+
+<style>.url_td{display:block;white-space: nowrap;text-overflow:ellipsis;width:350px;overflow: hidden}</style>
+<div id="SiteMapPath">
+    <ul>
+        <li>
+            <a href="/">首页</a>
+        </li>
+        <li>
+            <a href="/Realtime/recharge">数据分析</a>
+        </li>
+        <li>广告点击量查询</li>
+    </ul>
+</div>
+<div id="MainContentDIV">
+    <link rel="stylesheet" type="text/css" href="__CSS__/managerMenu.css">
+    <include file="Public/left_menu" />
+
+    <div id="ManagerRight" class="ManagerRightShow">
+        <form id="myform" name="countform" method="get" action="/Charts/click">
+            <p>点击总量：<b class="price" style="font-size: 18px"><{$result_total}></b></p>
+            <div id="count_search">
+                <ul class="search_box">
+                    <li class="line">
+                        <label class="title" style="width:80px">日期选择：</label>
+                        <input type="hidden" class="start_input" name="start">
+                        <div class="ta_date" id="div_date_demo3">
+                            <span class="date_title" id="date_demo3"></span>
+                            <a class="opt_sel" id="input_trigger_demo3" href="#">
+                                <i class="i_orderd"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <if condition="$sub_channel">
+                        <li class="line">
+                            <label class="title">一级栏目：</label>
+                            <label class="msg">
+                                <select name="sub_channel" id="sub_channel" onchange="getSecChannel(this)">
+                                    <option value="">请选择一级栏目</option>
+                                    <volist name="sub_channel" id="vo"><option value="<{$vo.id}>" <if condition="$sub_channel_val eq $vo['id']">selected</if>><{$vo.name}></option></volist>
+                                </select>
+                            </label>
+                        </li>
+                    </if>
+                    <li class="line">
+                        <label class="title">二级栏目：</label>
+                        <label class="msg">
+                            <select name="sec_channel" id="sec_channel">
+                                <option value="">请选择二级栏目</option>
+                                <volist name="sec_channel" id="vo"><option value="<{$vo.id}>" <if condition="$sec_channel_val eq $vo['id']">selected</if>><{$vo.name}></option></volist>
+                            </select>
+                        </label>
+                    </li>
+					
+					<style>
+						.msg>ul{position:absolute;width:150px;border:1px solid #eee;background-color:#fff;z-index:999;}
+					</style>
+					
+                    <li class="line">
+                        <label class="title">操作系统：</label>
+                        <label class="msg">
+                            <select name="os" id="vo">
+                                <option value="">所有</option>
+                                <option value="ios" <if condition="$_GET['os'] eq 'ios'">selected</if> >ios</option>
+                                <option value="android" <if condition="$_GET['os'] eq 'android'">selected</if>  >android</option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="bottom">
+                        <input type="hidden" name="order" id="order" value="">
+                        <input type="submit" name="searchbtn" value="搜索" class="manager-btn s-btn search-btn">
+                        <input type="button" name="excelbtn" value="导出EXCEL" class="manager-btn s-btn orange-btn ml-10">
+                    </li>
+                </ul>
+            </div>
+            <div id="count_body">
+				 <div id="container" style="min-width:800px;height:400px;"></div>
+            </div>
+           
+        </form>
+        <div class="product-detail-desc mt-15">
+            <div class="title mb-5">
+                <span>广告点击量查询说明：</span>
+            </div>
+            <p class="pt-5"><span  style="font-weight:bold;">广告点击量查询说明：</span>广告点击量查询，对于当前账号显示广告点击量的数据，广告点击量查询会展示某段时间的广告点击量分析图 。</p>
+            <p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>
+                使用者可以通过对日期选择，一级栏目，二级栏目进行自定义，选择自己想查询的数据并点击搜索按钮实现广告点击量查询的分析图并显示点击总量。
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+	   $(function () {
+        var klist = '<{$klist}>';
+        var datalist = '<{$datalist}>';
+        var charts;
+        var data_source = {
+            chart: {
+                renderTo: 'container',
+                type: 'line'
+            },
+            title: {
+                text: '广告点击量走势',
+                x: -20 //center
+            },
+            subtitle: {
+                text: '7477游戏平台',
+                x: -20
+            },
+            xAxis: {
+                categories: eval("("+klist+")")
+            },
+            yAxis: {
+                title: {
+                    text: '点击量'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: eval("("+datalist+")"),
+            credits: {enabled:false}
+        };
+        charts = new Highcharts.Chart(data_source);
+
+        
+        
+    });
+
+
+    $(function () {
+        var start = "<{$start}>";
+        var end = "<{$end}>";
+        $('.start_input').attr('value',start);
+        $('.end_input').attr('value',end);
+        var dateRange = new pickerDateRange('date_demo3', {
+            aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+            isTodayValid: true,
+            startDate: start,
+            //needCompare : true,
+            //isSingleDay : true,
+            //shortOpr : true,
+            defaultText: ' 至 ',
+            inputTrigger: 'input_trigger_demo3',
+            theme: 'ta',
+            success: function (obj) {
+                $("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+                $("#input_trigger_demo3").parents('li.line').find('.start_input').attr('value', obj.startDate);
+                $("#input_trigger_demo3").parents('li.line').find('.end_input').attr('value', obj.endDate);
+            }
+        });
+    });
+	
+    //排序
+    function order(order) {
+        $('#order').attr('value', order);
+        $('#myform').submit();
+    }
+</script>
+<include file="Public/secchannel" />
+<include file="Public/footer" />

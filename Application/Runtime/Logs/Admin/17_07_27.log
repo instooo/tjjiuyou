@@ -1,0 +1,131 @@
+[ 2017-07-27T10:08:06+08:00 ] 192.168.1.48 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-07-27T10:48:49+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.436000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.051000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.487000s ]
+
+[ 2017-07-27T10:48:50+08:00 ] 127.0.0.1 /index.php/Public/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: user D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\3c5566b2bfbf6ef00ac5366ba47246fe.php ç¬¬ 97 è¡Œ.
+NOTIC: [8] Undefined index: user D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\3c5566b2bfbf6ef00ac5366ba47246fe.php ç¬¬ 105 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-07-27T10:48:50+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-27T10:48:53+08:00 ] 127.0.0.1 /Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+
+
+[ 2017-07-27T10:48:58+08:00 ] 127.0.0.1 /Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+ERR: SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+
+
+[ 2017-07-27T10:49:41+08:00 ] 127.0.0.1 /index.php/Public/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: user D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\3c5566b2bfbf6ef00ac5366ba47246fe.php ç¬¬ 97 è¡Œ.
+NOTIC: [8] Undefined index: user D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\3c5566b2bfbf6ef00ac5366ba47246fe.php ç¬¬ 105 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-07-27T10:49:43+08:00 ] 127.0.0.1 /Public/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.2040s ]
+SQL: SELECT * FROM `mygame_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0530s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0450s ]
+SQL: SELECT `role_id` FROM `mygame_role_user` WHERE ( user_id=68 ) LIMIT 1   [ RunTime:0.0280s ]
+SQL: UPDATE `mygame_user` SET `last_login_time`='1501123783',`login_count`=login_count+1 WHERE `id` = 68 [ RunTime:0.0010s ]
+
+[ 2017-07-27T10:49:43+08:00 ] 127.0.0.1 /index.php/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `mygame_role_user` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `mygame_role` [ RunTime:0.0080s ]
+SQL: SELECT User.id AS id,User.username AS username,User.nickname AS nickname,User.realname AS realname,User.password AS password,User.bind_account AS bind_account,User.last_login_time AS last_login_time,User.last_login_ip AS last_login_ip,User.login_count AS login_count,User.verify AS verify,User.email AS email,User.remark AS remark,User.create_time AS create_time,User.update_time AS update_time,User.status AS status,User.info AS info,Role.id AS roleid,Role.name AS rolename FROM mygame_user User  JOIN mygame_role_user Role_user ON User.id=Role_user.user_id LEFT JOIN mygame_role Role ON Role_user.role_id=Role.id WHERE User.id = '68' LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `mygame_node` [ RunTime:0.0200s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`level`,`ismenu`,`sort`,(pid*level*sort) as sortby FROM `mygame_node` WHERE `status` = 1 ORDER BY sortby desc  [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `mygame_user` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `mygame_user` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\data\wwwroot\web\sycps.7477.me\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php ç¬¬ 117 è¡Œ.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

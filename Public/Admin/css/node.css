@@ -1,0 +1,16 @@
+/*节点列表start*/
+.node_table{border: 1px solid #eee;margin-top: 20px;}
+.node_table tr{line-height: 50px;}
+.node_table th{text-align: left;border-bottom: 1px solid #E1E6EB;}
+.node_table td{padding: 0; vertical-align: middle;border-bottom: 1px solid #E1E6EB;}
+.node_table .fold_tag{margin-right: 10px;}
+.node_table .input_sort{width: 50px;}
+.node_table .edit_input{width: 200px;height:25px;}
+.add_node_div table tr{line-height: 45px;}
+.add_node_div .subBtn{display: block;width: 80px;line-height: 30px;background-color: #009900;color: white;text-align: center}
+
+.btn_sub{display: block;width: 80px;line-height: 30px;background-color: #009900;color: white;text-align: center}
+.form_content tr{line-height: 45px;}
+.form_content td{font-size: 15px;}
+.form_content input.alert_input{width: 200px;height:25px;}
+/*节点列表end*/

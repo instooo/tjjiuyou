@@ -1,0 +1,220 @@
+<include file="Public/header" />
+<script src="__JS__/highcharts/highcharts.js"></script>
+<script src="__JS__/highcharts/modules/exporting.js"></script>
+<script src="__JS__/highcharts/themes/grid-light.js"></script>
+
+<style>.url_td{display:block;white-space: nowrap;text-overflow:ellipsis;width:350px;overflow: hidden}</style>
+<div id="SiteMapPath">
+    <ul>
+        <li>
+            <a href="/">首页</a>
+        </li>
+        <li>
+            <a href="/Realtime/recharge">数据分析</a>
+        </li>
+        <li>充值金额地域分布</li>
+    </ul>
+</div>
+<div id="MainContentDIV">
+    <link rel="stylesheet" type="text/css" href="__CSS__/managerMenu.css">
+    <include file="Public/left_menu" />
+
+    <div id="ManagerRight" class="ManagerRightShow">
+        <form id="myform" name="countform" method="get" action="/Charts/payAreaSpread">
+            <div id="count_search">
+                <ul class="search_box">
+                    <li class="line">
+                        <label class="title" style="width:80px">日期选择：</label>
+                        <input type="hidden" class="start_input" name="start">
+                        <input type="hidden" class="end_input" name="end">
+                        <div class="ta_date" id="div_date_demo3">
+                            <span class="date_title" id="date_demo3"></span>
+                            <a class="opt_sel" id="input_trigger_demo3" href="#">
+                                <i class="i_orderd"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="line">
+                        <label class="title">游戏：</label>
+                        <label class="msg">
+                            <select name="gid" id="gid">
+                                <option value="">所有</option>
+                                <volist name="gamelist" id="vo"><option value="<{$vo.gid}>" <if condition="$gid eq $vo['gid']">selected</if>><{$vo.game}></option></volist>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="line">
+                        <label class="title">渠道类型：</label>
+                        <label class="msg">
+                            <select name="channeltype" id="channeltype">
+                                <option value="">请选择渠道类型</option>
+                                <volist name="typename" id="vo">
+                                    <option value="<{$vo.tid}>" <if condition="$type_name eq $vo['tid']">selected</if>><{$vo.name}></option>
+                                </volist>
+                            </select>
+                        </label>
+                    </li>
+                    <if condition="$sub_channel">
+                        <li class="line">
+                            <label class="title">一级栏目：</label>
+                            <label class="msg">
+                                <select name="sub_channel" id="sub_channel" onchange="getSecChannel(this)">
+                                    <option value="">请选择一级栏目</option>
+                                    <volist name="sub_channel" id="vo"><option value="<{$vo.id}>" <if condition="$sub_channel_val eq $vo['id']">selected</if>><{$vo.name}></option></volist>
+                                </select>
+                            </label>
+                        </li>
+                    </if>
+					
+					<style>
+						.msg>ul{position:absolute;width:150px;border:1px solid #eee;background-color:#fff;z-index:999;}
+					</style>
+					<li class="line">
+                        <label class="title">二级栏目搜索：</label>
+                        <label class="msg" style="position:relative;">
+                           <input id="product_search" type="text" name="secsearch" value="<{$sec_search}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+					
+
+                    <li class="bottom">
+                        <input type="hidden" name="order" id="order" value="">
+                        <input type="hidden" name="SearchType" id="type" value="">
+                        <input type="button" name="searchbtn" id="Tmoneybtn" value="充值金额地域占比图" class="manager-btn s-btn search-btn">
+                        <input type="button" name="searchbtn" id="Smanbtn" value="充值人数地域占比图" class="manager-btn s-btn search-btn">
+                    </li>
+                </ul>
+            </div>
+            <div id="count_body">
+				 <div id="container" style="min-width:800px;height:600px;"></div>
+            </div>
+           
+        </form>
+        <div class="product-detail-desc mt-15">
+            <div class="title mb-5">
+                <span>充值金额地域占比图：</span>
+            </div>
+            <p class="pt-5"><span  style="font-weight:bold;">充值金额地域占比图说明：</span>充值金额地域占比，用于分析每个地域充值金额占总充值总金额的百分比。</p>
+            <p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>
+                使用者可以通过对日期选择，游戏，一级栏目，二级栏目进行自定义，选择自己想查询的数据并点击搜索按钮实现充值数据的占比图并显示各个地域内的充值金额百分比。
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		var data = <{$data}>;
+		var title = '<{$title}>';
+		// Build the chart
+		Highcharts.chart('container', {
+			chart: {
+				plotBackgroundColor: null,
+				plotBorderWidth: null,
+				plotShadow: false,
+				type: 'pie'
+			},
+			title: {
+				text: title,
+				fontSize: '18px',
+				fontWeight: 'bold',
+				textTransform: 'uppercase'
+			},
+			tooltip: {
+				borderWidth: 0,
+				backgroundColor: 'rgba(219,219,216,0.6)',
+				shadow: false,
+				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
+			legend: {
+				itemStyle: {
+				 fontWeight: 'bold',
+				 fontSize: '13px'
+				}
+			},
+			xAxis: {
+					gridLineWidth: 1,
+					labels: {
+						style: {
+							fontSize: '12px'
+						}
+					}
+				},
+			yAxis: {
+					minorTickInterval: 'auto',
+					title: {
+						style: {
+							textTransform: 'uppercase'
+						}
+					},
+					labels: {
+						style: {
+							fontSize: '12px'
+						}
+					}
+			},
+			plotOptions: {
+				pie: {
+					allowPointSelect: true,
+					cursor: 'pointer',
+					dataLabels: {
+						enabled: false
+					},
+					showInLegend: true
+				}
+			},
+			series: [{
+				name: 'Brands',
+				colorByPoint: true,
+				data: data
+			}]
+		});
+	});
+
+    $(function () {
+        var start = "<{$start}>";
+        var end = "<{$end}>";
+        $('.start_input').attr('value',start);
+        $('.end_input').attr('value',end);
+        var dateRange = new pickerDateRange('date_demo3', {
+            aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+            isTodayValid: true,
+            startDate: start,
+            endDate: end,
+            //needCompare : true,
+            //isSingleDay : true,
+            //shortOpr : true,
+            defaultText: ' 至 ',
+            inputTrigger: 'input_trigger_demo3',
+            theme: 'ta',
+            success: function (obj) {
+                $("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+                $("#input_trigger_demo3").parents('li.line').find('.start_input').attr('value', obj.startDate);
+                $("#input_trigger_demo3").parents('li.line').find('.end_input').attr('value', obj.endDate);
+            }
+        });
+		
+		$("#Tmoneybtn").click(function(){
+			$("#type").val('money');
+			$("#myform").submit();
+		});	
+		$("#Smanbtn").click(function(){
+			$("#type").val('num');
+			$("#myform").submit();
+		});
+		if("<{$type}>" == "money"){
+			var $html = '<div class="title mb-5"><span>充值金额地域占比图：</span></div><p class="pt-5"><span  style="font-weight:bold;">充值金额地域占比图说明：</span>充值金额地域占比，用于分析每个地域充值金额占总充值总金额的百分比。</p><p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>使用者可以通过对日期选择，游戏，一级栏目，二级栏目进行自定义，选择自己想查询的数据并点击搜索按钮实现充值数据的占比图并显示各个地域内的充值金额百分比。</p>';
+			$('#tips').html($html);
+		}else if("<{$type}>" =="num"){
+			var $html = '<div class="title mb-5"><span>充值人数时段占比图：</span></div><p class="pt-5"><span  style="font-weight:bold;">充值人数地域占比图说明：</span>充值人数地域占比，用于指定时间段内分析每个地域充值人数占总充值人数的百分比。</p><p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>使用者可以通过对日期选择，游戏，一级栏目，二级栏目进行自定义，选择自己想查询的数据并点击搜索按钮实现充值数据的占比图并显示各个地域的充值人数百分比。</p>';
+			$('#tips').html($html);
+		}
+    });
+    //排序
+    function order(order) {
+        $('#order').attr('value', order);
+        $('#myform').submit();
+    }
+</script>
+<include file="Public/secchannel" />
+<include file="Public/footer" />

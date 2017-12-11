@@ -1,0 +1,215 @@
+<include file="Public/header" />
+<style>.url_td{display:block;white-space: nowrap;text-overflow:ellipsis;width:350px;overflow: hidden}</style>
+<div id="SiteMapPath">
+    <ul>
+        <li>
+            <a href="/">首页</a>
+        </li>
+        <li>
+            <a href="/Realtime/down_list">下载安装次数</a>
+        </li>
+        <li>下载安装次数查询</li>
+    </ul>
+</div>
+<div id="MainContentDIV">
+    <link rel="stylesheet" type="text/css" href="__CSS__/managerMenu.css">
+    <include file="Public/left_menu" />
+
+    <div id="ManagerRight" class="ManagerRightShow">
+        <form id="myform" name="countform" method="get" action="/Realtime/down_list">
+            <div class="moneyinfos clearfix">
+                <p style="font-size: 18px">下载安装人数：<b class="price" style="font-size: 18px"><{$register_count}></b>人</p>
+            </div>
+            <div id="count_search">
+                <ul class="search_box">
+                    <li class="line">
+                        <label class="title" style="width:80px">下载日期：</label>
+                        <input type="hidden" class="reg_start_input" name="reg_start">
+                        <input type="hidden" class="reg_end_input" name="reg_end">
+                        <div class="ta_date" id="div_date_demo4">
+                            <span class="date_title" id="date_demo4"></span>
+                            <a class="opt_sel" id="input_trigger_demo4" href="#">
+                                <i class="i_orderd"></i>
+                            </a>
+                        </div>
+                        
+                    </li>
+                    <li class="line">
+                        <label class="title">游戏：</label>
+                        <label class="msg">
+                            <select name="gid" id="gid">
+                                <option value="">所有</option>
+                                <volist name="gamelist" id="vo"><option value="<{$vo.gid}>" <if condition="$gid eq $vo['gid']">selected</if>><{$vo.game}></option></volist>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="line">
+                        <label class="title">唯一标识：</label>
+                        <label class="msg" style="position:relative;">
+                            <input id="device_id_search" type="text" name="device_id" value="<{$device_id}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+
+                    <li class="line">
+                        <label class="title">渠道类型：</label>
+                        <label class="msg">
+                            <select name="channeltype" id="channeltype">
+                                <option value="">请选择渠道类型</option>
+                                <volist name="typename" id="vo">
+                                    <option value="<{$vo.tid}>" <if condition="$type_name eq $vo['tid']">selected</if>><{$vo.name}></option>
+                                </volist>
+                            </select>
+                        </label>
+                    </li>
+
+                    <if condition="$sub_channel">
+                        <li class="line">
+                            <label class="title">一级栏目：</label>
+                            <label class="msg">
+                                <select name="sub_channel" id="sub_channel" onchange="getSecChannel(this)">
+                                    <option value="">请选择一级栏目</option>
+                                    <volist name="sub_channel" id="vo"><option value="<{$vo.id}>" <if condition="$sub_channel_val eq $vo['id']">selected</if>><{$vo.short_name}></option></volist>
+                                </select>
+                            </label>
+                        </li>
+                    </if>
+                   
+					
+					<style>
+						.msg>ul{position:absolute;width:150px;border:1px solid #eee;background-color:#fff;z-index:999;}
+					</style>
+					<li class="line">
+                        <label class="title">二级栏目搜索：</label>
+                        <label class="msg" style="position:relative;">
+                           <input id="product_search" type="text" name="secsearch" value="<{$sec_search}>" data-provide="typeahead" autocomplete="off"/>
+                        </label>
+                    </li>
+					<li class="line">
+						<label class="title">二级栏目快选：</label>
+						<label class="msg">
+							<input type="text" id="quick_select" name="c_keyword" class="manager-input s-input">
+						</label>
+					</li>
+                    <li class="line">
+                        <label class="title">每页条数：</label>
+                        <label class="msg">
+                            <select name="pagesize" style="width: 50px">
+                                <option value="10" <if condition="$pagesize eq 10">selected</if>>10</option>
+                                <option value="20" <if condition="$pagesize eq 20">selected</if>>20</option>
+                                <option value="30" <if condition="$pagesize eq 30">selected</if>>30</option>
+                                <option value="50" <if condition="$pagesize eq 50">selected</if>>50</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="bottom">
+                        <input type="hidden" name="order" id="order" value="">
+                        <input type="submit" name="searchbtn" value="搜索" class="manager-btn s-btn search-btn">
+                        <input type="button" name="excelbtn" value="导出EXCEL" class="manager-btn s-btn orange-btn ml-10">
+                    </li>     
+                </ul>
+       
+            </div>
+            <div id="count_body">
+                <table class="huitable">
+                    <thead>
+                    <tr align="left">
+                        <th>ID</th>    
+                        <th>游戏名</th>
+                        <th>设备唯一标识</th>
+                        <th>下载ip</th>
+                        <th>推广人员</th>
+                        <th onclick="order('pay_time')">下载时间</th>
+                        <th>操作系统</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <if condition="$list">
+                        <volist name="list" id="vo">
+                            <tr>
+                                <td><{$vo.id}></td>
+                                <td><{$vo.gamename}></td>
+                                <td><{$vo.device_id}></td>
+                                <td><{$vo.ip}></td>
+                                <td><{$vo.channel_name}></td>
+                                <td><{$vo.install_time|date="Y-m-d H:i",###}></td>
+                                <td><{$vo.os}></td>
+                            </tr>
+                        </volist>
+                        <else />
+                        <tr><td colspan="7" style="text-align:center; font-size:24px; color:#ccc;">无记录</td></tr>
+                    </if>
+                    </tbody>
+                </table>
+            </div>
+            <div id="jsonpage" class="pagebox"><div class="pageinfo"><{$pagebar}></div></div>
+        </form>
+        <div class="product-detail-desc mt-15">
+            <div class="title mb-5">
+                <span>下载安装查询说明：</span>
+            </div>
+            <p class="pt-5"><span  style="font-weight:bold;">下载安装查询说明：</span>当前账号显示下载安装的详细信息，会展示游戏名，设备唯一标识、下载IP、推广人员、下载时间、造作系统和选择时间内的下载安卓人数等信息。</p>
+            <p class="pt-5"><span style="font-weight:bold;">使用者说明：</span>使用者可以通过对下载日期，游戏、一级栏目、二级栏目。每页条数进行自定义，选择自己想查询的数据并点击搜索按钮进行显示，并可以通过“导出EXCEL”按钮导出数据。</p>
+        </div>
+    </div>
+</div>
+<script src="__JS__/laydate/laydate.js"></script>
+<script>
+    $(function () {
+        var start = "<{$start}>";
+        var end = "<{$end}>";
+        var reg_start = "<{$reg_start}>";
+        var reg_end = "<{$reg_end}>";
+        $('.start_input').attr('value',start);
+        $('.end_input').attr('value',end);
+        $('.reg_start_input').attr('value',reg_start);
+        $('.reg_end_input').attr('value',reg_end);
+        var dateRange = new pickerDateRange('date_demo3', {
+            aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+            isTodayValid: true,
+            startDate: start,
+            endDate: end,
+            //needCompare : true,
+            //isSingleDay : true,
+            //shortOpr : true,
+            defaultText: ' 至 ',
+            inputTrigger: 'input_trigger_demo3',
+            theme: 'ta',
+            success: function (obj) {
+                $("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+                $("#input_trigger_demo3").parents('li.line').find('.start_input').attr('value', obj.startDate);
+                $("#input_trigger_demo3").parents('li.line').find('.end_input').attr('value', obj.endDate);
+            }
+			
+        });
+        
+        var dateRange = new pickerDateRange('date_demo4', {
+            aRecent7Days: 'aRecent7DaysDemo4', //最近7天
+            isTodayValid: true,
+            startDate: reg_start,
+            endDate: reg_end,
+            //needCompare : true,
+            //isSingleDay : true,
+            //shortOpr : true,
+            defaultText: ' 至 ',
+            inputTrigger: 'input_trigger_demo4',
+            theme: 'ta',
+            success: function (obj) {
+                $("#dCon_demo4").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+                $("#input_trigger_demo4").parents('li.line').find('.reg_start_input').attr('value', obj.startDate);
+                $("#input_trigger_demo4").parents('li.line').find('.reg_end_input').attr('value', obj.endDate);
+            }
+        });
+   	//第一次默认获取二级栏目
+		$('#quick_select').blur(function(){
+			QuickSelect();
+		});
+    });
+
+    //排序
+    function order(order) {
+        $('#order').attr('value', order);
+        $('#myform').submit();
+    }
+</script>
+<include file="Public/secchannel" />
+<include file="Public/footer" />
