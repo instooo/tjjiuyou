@@ -1272,114 +1272,111 @@ class ChartsController extends CommonController {
 	*/
     public function areaSpread(){
         //查询游戏名及id
-        $gamelist = $this->getUserGames();
-
-		$rechannel = $this->getTotalChannel();
-        $typeid = array_unique(array_column($rechannel,'tid'));
-        $typeid_map['tid'] = array('in',$typeid);
-        $type_model = M('channel_type');
-        $type_list = $type_model->where($typeid_map)->field('tid,name')->select();
-        $this->assign('typename',$type_list);
-		$channel =array_column($rechannel,'id');
-		$sec_search = htmlspecialchars(trim($_REQUEST['secsearch']));
-		$name = $this->isEscape($sec_search,true);
-		//接收条件
-		$submit = $_REQUEST['submit'];
-		$gid = $_REQUEST['gid'];
+        $gamelist = $this->getUserGames();
+		$rechannel = $this->getTotalChannel();
+        $typeid = array_unique(array_column($rechannel,'tid'));
+        $typeid_map['tid'] = array('in',$typeid);
+        $type_model = M('channel_type');
+        $type_list = $type_model->where($typeid_map)->field('tid,name')->select();
+        $this->assign('typename',$type_list);
+		$channel =array_column($rechannel,'id');
+		$sec_search = htmlspecialchars(trim($_REQUEST['secsearch']));
+		$name = $this->isEscape($sec_search,true);
+		//接收条件
+		$submit = $_REQUEST['submit'];
+		$gid = $_REQUEST['gid'];
         $typename = $_REQUEST['channeltype'];
-		//接收栏目
-		$sub_channels = $_REQUEST['sub_channel'];
+		//接收栏目
+		$sub_channels = $_REQUEST['sub_channel'];
 		//接收时间
-        $nowtime = time();
-        $start = $_REQUEST['start'];
-        $end = $_REQUEST['end'];
-        $start_time = strtotime($start.' 00:00:00');
-        $end_time = strtotime($end.' 23:59:59');
-        if (!$start) {
-            $start = date('Y-m-d', $nowtime);
-            $start_time = strtotime($start.' 00:00:00');
+        $nowtime = time();
+        $start = $_REQUEST['start'];
+        $end = $_REQUEST['end'];
+        $start_time = strtotime($start.' 00:00:00');
+        $end_time = strtotime($end.' 23:59:59');
+        if (!$start) {
+            $start = date('Y-m-d', $nowtime);
+            $start_time = strtotime($start.' 00:00:00');
         }
-        if (!$end) {
-            $end = date('Y-m-d', $nowtime);
-            $end_time = strtotime($end.' 23:59:59');
+        if (!$end) {
+            $end = date('Y-m-d', $nowtime);
+            $end_time = strtotime($end.' 23:59:59');
         }
-        $this->assign('start', $start);
-        $this->assign('end', $end);
-		$map['date'] = array('between', array(date('Ymd', $start_time), date('Ymd', $end_time)));
-		if ($_REQUEST['gid']) {
-            $map['gid'] = $_REQUEST['gid'];
-            $this->assign('gid', $_REQUEST['gid']);
-        }else {
-            $map['gid'] = array('in', array_column($gamelist, 'gid'));
+        $this->assign('start', $start);
+        $this->assign('end', $end);
+		$map['date'] = array('between', array(date('Ymd', $start_time), date('Ymd', $end_time)));
+		if ($_REQUEST['gid']) {
+            $map['gid'] = $_REQUEST['gid'];
+            $this->assign('gid', $_REQUEST['gid']);
+        }else {
+            $map['gid'] = array('in', array_column($gamelist, 'gid'));
+        }
+		if($sub_channels){//当选择一级栏目时候
+			$map['total_channels'] = $sub_channels;
+			$this->assign('sub_channel_val',$sub_channels);
+        }else{
+           $map['total_channels'] = array('in',$channel);
+        }
+		if($sec_search){
+			if($sub_channels){
+				$condition['pid'] = $sub_channels;
+			}
+			$condition['name'] = array('like',"%".$name."%");
+			$sec_list = M('channel')->field('id')->where($condition)->select();
+			$this->assign('sec_search',$sec_search);
+			if($sec_list){
+				$map['sub_channels'] = array('in',array_column($sec_list,'id'));
+			}else{
+				$map['sub_channels'] = null;
+			}
+		}
+        if($typename && !$sec_search && !$sec_channel && !$sub_channels){
+            $channelArr = array();
+            foreach ($rechannel as $key => $val) {
+                if($val['tid'] == $typename) {
+                    $channelArr[] = $val['id'];
+                }
+            }
+            if($channelArr){
+                $map['total_channels'] = array('in',$channelArr);
+            }else{
+                $map['total_channels'] = null;
+            }
+            $this->assign('type_name',$typename);
         }
-		
-		if($sub_channels){//当选择一级栏目时候
-			$map['total_channels'] = $sub_channels;
-			$this->assign('sub_channel_val',$sub_channels);
-        }else{
-           $map['total_channels'] = array('in',$channel);
-        }
-		
-		if($sec_search){
-			if($sub_channels){
-				$condition['pid'] = $sub_channels;
-			}
-			$condition['name'] = array('like',"%".$name."%");
-			$sec_list = M('channel')->field('id')->where($condition)->select();
-			$this->assign('sec_search',$sec_search);
-			if($sec_list){
-				$map['sub_channels'] = array('in',array_column($sec_list,'id'));
-			}else{
-				$map['sub_channels'] = null;
-			}
-		}
-        if($typename && !$sec_search && !$sec_channel && !$sub_channels){
-            $channelArr = array();
-            foreach ($rechannel as $key => $val) {
-                if($val['tid'] == $typename) {
-                    $channelArr[] = $val['id'];
-                }
-            }
-            if($channelArr){
-                $map['total_channels'] = array('in',$channelArr);
-            }else{
-                $map['total_channels'] = null;
-            }
-            $this->assign('type_name',$typename);
-        }
-		//实例化
-		$data = array();
-		if($submit){
-		$area_model = M('tj_member_byarea');
-		$area_tj = $area_model
-			->field('sum(register_num) as sum_num,area')
-			->where($map)
-			->group('area')
-			->select();
-		$count = 0;
-		foreach($area_tj as $key => $val){
-			$count += $val['sum_num'];
-			$num1[$key] = $val['sum_num'];	
-		}
-		array_multisort($num1, SORT_DESC,$area_tj);
-		$max = max(array_column($area_tj,'sum_num'));
-		$i = 0;
-		foreach($area_tj as $key=>$val){
-			if($max == $val['sum_num'] && $i==0){
-				$data[$key]['sliced'] = true;
-				$data[$key]['selected'] = true;
-				$i++;
-			}
-			$data[$key]['name'] = $val['area'].' '.$val['sum_num'].'人';
-			$data[$key]['y'] = ($val['sum_num']/$count)*100;
-		}
-		$title = "注册人数地域分布分析图   (总人数：".$count."人)";
-			$this->assign('title',$title);
-		}
-		$this->assign('data',json_encode($data));
-		$this->assign('sub_channel', $rechannel);
-        $this->assign('gamelist', $gamelist);
-		$this->display();	
+		//实例化
+		$data = array();
+		if($submit){
+		$area_model = M('tj_member_byarea');
+		$area_tj = $area_model
+			->field('sum(register_num) as sum_num,area')
+			->where($map)
+			->group('area')
+			->select();
+		$count = 0;
+		foreach($area_tj as $key => $val){
+			$count += $val['sum_num'];
+			$num1[$key] = $val['sum_num'];	
+		}
+		array_multisort($num1, SORT_DESC,$area_tj);
+		$max = max(array_column($area_tj,'sum_num'));
+		$i = 0;
+		foreach($area_tj as $key=>$val){
+			if($max == $val['sum_num'] && $i==0){
+				$data[$key]['sliced'] = true;
+				$data[$key]['selected'] = true;
+				$i++;
+			}
+			$data[$key]['name'] = $val['area'].' '.$val['sum_num'].'人';
+			$data[$key]['y'] = ($val['sum_num']/$count)*100;
+		}
+		$title = "注册人数地域分布分析图   (总人数：".$count."人)";
+			$this->assign('title',$title);
+		}
+		$this->assign('data',json_encode($data));
+		$this->assign('sub_channel', $rechannel);
+        $this->assign('gamelist', $gamelist);
+		$this->display();
 	}
 	
 	/**
